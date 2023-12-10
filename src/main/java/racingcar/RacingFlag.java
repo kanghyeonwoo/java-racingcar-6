@@ -7,27 +7,24 @@ import java.util.List;
 
 public class RacingFlag {
     List<String> splitName;
+    List<String> playerList;
+
     public List<String> GetPlayerName(String playerList) {
         splitName = Arrays.asList(playerList.split(","));
         System.out.println(splitName);
-
         return splitName;
     }
-    public boolean PlayerValidTest(List<String> testPlayer) {
+    public void PlayerValidTest(List<String> testPlayer) {
 
-        List<String> playerList = testPlayer;
-        System.out.println(playerList.size());
+        playerList = testPlayer;
+//        System.out.println(playerList.size());
+
         for(int i = 0;i<playerList.size();i++){
-        if(playerList.get(i).length()>5){
+            PlayerNameSize(i);
+        }
+    }
+    public void PlayerNameSize(int i) {
+        if (playerList.get(i).length() > 5)
             System.out.println(playerList.get(i));
-            System.out.println("ㄴ");
-            return false;
-        }
-        else{
-            System.out.println("통과");
-            System.out.println(playerList.get(i));
-        }
-        }
-        return true;
     }
 }
